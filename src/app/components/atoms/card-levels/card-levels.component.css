@@ -15,14 +15,14 @@
     flex-direction: row;
     align-items: center;
 }
-.button{
+.active{
     background-color: #330072;
     color: white;
     border-radius: 5px;
     border: 1px solid #DD52DD;
     padding: 5px 10px;
 }
-.button:hover{
+.active:hover{
     background-color: #DD52DD;
     color: white;
 }
@@ -32,7 +32,11 @@ h1{
 p{
     font-size:14px
 }
-.button:hover {
+.active:hover {
   transform: scale(1.05);
   transition: 0.2s;
+}
+.deactive{
+    background-color: gray;
+    cursor: no-drop;
 }

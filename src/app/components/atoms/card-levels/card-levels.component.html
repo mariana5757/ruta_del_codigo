@@ -4,5 +4,5 @@
         <h1>{{level.name}}</h1>
     </div>
     <p>{{level.description}}</p>
-    <button class="button" (click)="goToLevel(level.id)">Comenzar</button>
+    <button class="button {{level.button}}" (click)="goToLevel(level.id)">Comenzar</button>
 </div>
