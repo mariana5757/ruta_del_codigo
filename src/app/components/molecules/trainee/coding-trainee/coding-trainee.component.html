@@ -1,0 +1,81 @@
+<div class="coding-trainee-container">
+    <h3>🧠 Codificación Práctica</h3>
+    <p>
+        Aquí podrás resolver retos de programación que pondrán a prueba tu lógica y habilidades. Cada reto está diseñado
+        para que identifiques errores y soluciones siguiendo buenas prácticas.
+    </p>
+
+    <h4>🔍 Reto 1: Sumar Números Pares</h4>
+    <p>
+        Tienes una lista de números. El objetivo es sumar solo los números pares. Observa el siguiente código y corrige
+        cualquier error que encuentres.
+    </p>
+
+    <pre><code>
+function sumaPares(numeros) &#123;
+  let suma = 0;
+  for (let i = 0; i &lt; numeros.length; i++) &#123;
+    if (numeros[i] % 2 === 0) &#123;
+      suma += numeros[i];
+    &#125;
+  &#125;
+  return suma;
+&#125;
+
+// Prueba
+console.log(sumaPares([1, 2, 3, 4, 5])); // Debería mostrar 6
+</code></pre>
+
+
+    <p><strong>Tu tarea:</strong> Revisa la lógica del código. ¿Está bien planteado? ¿Hay errores de sintaxis o lógica?
+        Intenta escribir una versión optimizada.</p>
+
+    <h4>🧪 Reto 2: Verificar Palíndromos</h4>
+    <p>
+        Un palíndromo es una palabra que se lee igual al derecho y al revés, como "oso" o "reconocer". Analiza la
+        siguiente función e identifica qué podrías mejorar o corregir:
+    </p>
+
+    <pre><code ngNonBindable>
+function esPalindromo(texto) &#123;
+  const limpio = texto.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const invertido = limpio.split('').reverse().join('');
+  return limpio === invertido;
+&#125;
+
+// Prueba
+console.log(esPalindromo("Anita lava la tina")); // true
+</code></pre>
+
+
+    <p><strong>Tu tarea:</strong> Asegúrate de que funcione con frases, con o sin espacios, y sin importar mayúsculas o
+        signos.</p>
+
+    <h4>🐞 Reto 3: Depura este Código</h4>
+    <p>
+        El siguiente código tiene un error que impide que se sume correctamente. ¿Puedes encontrarlo y corregirlo?
+    </p>
+
+<pre><code ngNonBindable>
+function sumarLista(lista) &#123;
+let total = 0;
+lista.forEach(function(numero) &#123;
+    total += numero;
+&#125;)
+return total;
+&#125;
+
+console.log(sumarLista([1, 2, 3])); // Debería mostrar 6
+</code></pre>
+
+
+
+    <p><strong>Pista:</strong> Observa con atención la línea que suma los números. ¿Estás seguro de que el operador es
+        el correcto?</p>
+
+    <h4>🎯 Tip Final</h4>
+    <p>
+        Usa herramientas como <strong>console.log</strong> para depurar tu código paso a paso. Es una de las formas más
+        efectivas para entender qué está ocurriendo en tiempo real.
+    </p>
+</div>

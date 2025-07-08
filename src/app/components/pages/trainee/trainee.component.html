@@ -1,0 +1,33 @@
+<div class="trainee-container">
+    <div class="title">
+        <img class="icon" src="../../../../assets/images/home_12561621.png" alt="" (click)="goToHome()" />
+        <h1 class="title">Nivel Trainee</h1>
+    </div>
+    <p class="intro">
+        Da tus primeros pasos en el mundo frontend con estos temas clave.
+    </p>
+
+    <div class="temas">
+        <div class="tema-card" *ngFor="let tema of temas; let i = index" [class.expanded]="expandedIndex === i"
+            (click)="toggleExpand(i)">
+            <ng-container *ngIf="expandedIndex !== i">
+                <h3>{{ tema.titulo }}</h3>
+                <p><strong>¿Qué es?</strong> {{ tema.queEs }}</p>
+                <p><strong>¿Cómo estudiarlo?</strong> {{ tema.comoEstudiarlo }}</p>
+            </ng-container>
+
+            <ng-container *ngIf="expandedIndex === i">
+                <div class="tema-expanded">
+                    <h1>{{ tema.titulo }}</h1>
+                    <p><strong>¿Qué es?</strong> {{ tema.queEs }}</p>
+                    <p><strong>¿Cómo estudiarlo?</strong> {{ tema.comoEstudiarlo }}</p>
+                      <ng-container *ngComponentOutlet="getComponentById(tema.id)"></ng-container>
+
+                    <button class="close-btn" (click)="toggleExpand(i); $event.stopPropagation()">
+                        Cerrar
+                    </button>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

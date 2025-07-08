@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="title">
+        <img class="icon" [src]="'assets/images/' + level.icon" alt="">
+        <h1>{{level.name}}</h1>
+    </div>
+    <p>{{level.description}}</p>
+    <button class="button" (click)="goToLevel(level.id)">Comenzar</button>
+</div>

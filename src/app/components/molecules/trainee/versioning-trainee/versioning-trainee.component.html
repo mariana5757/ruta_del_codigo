@@ -1,0 +1,169 @@
+<h2>📘 ¿Qué es GIT?</h2>
+<p>
+    Git es un sistema de control de versiones distribuido que
+    permite gestionar y rastrear cambios en el código de un
+    proyecto. Su propósito es facilitar la colaboración entre
+    desarrolladores, mantener un historial de cambios y revertir
+    errores en el código cuando sea necesario.
+</p>
+
+<h2>⚙️ Configuración inicial</h2>
+<ol>
+    <li>Regístrate en <strong>GitHub</strong>.</li>
+    <li>
+        Descarga e instala <strong>Git</strong> en tu equipo desde
+        <a href="https://git-scm.com">git-scm.com</a>.
+    </li>
+    <li>
+        Configura tu nombre y correo:
+        <pre><code>git config --global user.name "TuNombre"
+git config --global user.email "tu_email.com"</code></pre>
+    </li>
+    <li>
+        Verifica tu configuración:
+        <pre><code>git config --list</code></pre>
+    </li>
+</ol>
+
+<h2>📦 Crear y conectar repositorios</h2>
+<p>
+    Desde GitHub puedes crear un repositorio en segundos. Puedes
+    inicializarlo con un README o un archivo
+    <code>.gitignore</code>. Luego, puedes conectar tu proyecto con
+    este repo remoto:
+</p>
+<pre><code>git init
+git remote add origin https://github.com/usuario/repositorio.git
+git add .
+git commit -m "initial commit"
+git push -u origin main</code></pre>
+
+<h2>💡 ¿Qué es el .gitignore?</h2>
+<p>
+    Es un archivo donde indicas qué archivos o carpetas no quieres
+    subir a GitHub, como configuraciones locales o archivos
+    sensibles.
+</p>
+
+<h2>💻 Comandos básicos</h2>
+<ul>
+    <li><code>git init</code>: Inicializa un repositorio local.</li>
+    <li><code>git clone URL</code>: Clona un repo remoto.</li>
+    <li>
+        <code>git status</code>: Verifica el estado de tu proyecto.
+    </li>
+    <li>
+        <code>git add .</code>: Añade todos los archivos al área de
+        preparación.
+    </li>
+    <li>
+        <code>git commit -m "mensaje"</code>: Crea un snapshot de los
+        cambios.
+    </li>
+    <li><code>git push</code>: Sube tus commits al repo remoto.</li>
+    <li>
+        <code>git pull</code>: Descarga cambios del repo remoto y los
+        une con tu rama actual.
+    </li>
+    <li><code>git branch</code>: Muestra las ramas disponibles.</li>
+    <li><code>git checkout nombre-rama</code>: Cambia de rama.</li>
+    <li>
+        <code>git log --oneline --graph</code>: Muestra el historial
+        en forma de árbol.
+    </li>
+</ul>
+
+<h2>🌱 Estados de los archivos en Git</h2>
+<ul>
+    <li>
+        <strong>Untracked:</strong> archivos nuevos no añadidos.
+    </li>
+    <li>
+        <strong>Modified:</strong> archivos editados pero no añadidos
+        al staging.
+    </li>
+    <li>
+        <strong>Staged:</strong> archivos listos para ser confirmados.
+    </li>
+    <li>
+        <strong>Committed:</strong> cambios guardados en el historial.
+    </li>
+</ul>
+
+<h2>📘 Git Stash</h2>
+<p>Guarda cambios temporales sin hacer commit:</p>
+<pre><code>git stash
+                                        # Recuperar:
+                                        git stash apply
+                                        # Eliminar:
+                                        git stash drop</code></pre>
+
+<h2>🧠 GitFlow - Flujo de trabajo recomendado</h2>
+<p>
+    GitFlow organiza el trabajo en ramas con diferentes propósitos:
+</p>
+<ul>
+    <li><strong>main:</strong> código estable en producción.</li>
+    <li>
+        <strong>development:</strong> integración de nuevas
+        funcionalidades.
+    </li>
+    <li>
+        <strong>feature/</strong>: nuevas funcionalidades que parten
+        de development.
+    </li>
+    <li><strong>release/</strong>: preparación para producción.</li>
+    <li>
+        <strong>bugfix/</strong>: corrección de errores antes de
+        producción.
+    </li>
+    <li>
+        <strong>hotfix/</strong>: solución urgente en producción.
+    </li>
+</ul>
+
+<h2>🧨 Resolución de conflictos</h2>
+<p>
+    Cuando dos ramas modifican el mismo archivo, Git lanza un
+    conflicto. Debes editar el archivo, resolver el conflicto y
+    luego:
+</p>
+<pre><code>git add archivo
+git commit -m "conflicto resuelto"</code></pre>
+
+<h2>🔍 Alternativas modernas</h2>
+<ul>
+    <li>
+        <code>git switch</code> → en vez de <code>checkout</code> para
+        cambiar ramas.
+    </li>
+    <li>
+        <code>git restore</code> → para descartar cambios en archivos.
+    </li>
+</ul>
+
+<h2>🎥 Interfaz gráfica (VS Code + GitLens)</h2>
+<p>
+    Con extensiones como GitLens puedes ver el historial de cada
+    archivo, comparar ramas y hacer commits sin usar terminal.
+</p>
+
+<h2>🎯 Buenas prácticas</h2>
+<ul>
+    <li>Haz commits pequeños y frecuentes.</li>
+    <li>
+        Usa mensajes claros: <code>feature: navbar</code>,
+        <code>fix: bug botón</code>.
+    </li>
+    <li>No trabajes directamente en <code>main</code>.</li>
+</ul>
+
+<h2>📌 Recursos adicionales</h2>
+<ul>
+    <li>
+        <a href="https://www.atlassian.com/git/tutorials">Atlassian Git Tutorials</a>
+    </li>
+    <li>
+        <a href="https://learngitbranching.js.org/">Learn Git Branching (interactivo)</a>
+    </li>
+</ul>

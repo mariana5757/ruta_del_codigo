@@ -1,0 +1,33 @@
+<div class="content">
+  <div class="content_info_general">
+    <p>Ruta de aprendizaje frontend</p>
+    <h1>Pragma</h1>
+    <p>Este espacio está diseñado para acompañarte en tu crecimiento profesional, ayudarte a cerrar brechas y guiarte en
+      tu ruta de aprendizaje.</p>
+  </div>
+  <div class="levels-container">
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div *ngFor="let group of levelGroups; let i = index" class="carousel-item" [class.active]="i === 0">
+          <div class="row">
+            <div class="col" *ngFor="let level of group">
+              <div class="card">
+                <app-card-levels [level]="level" (levelSelected)="goToLevel($event)"></app-card-levels>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+</div>

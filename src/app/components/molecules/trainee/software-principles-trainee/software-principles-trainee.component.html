@@ -1,0 +1,86 @@
+<div class="principios-software">
+  <h3>🧠 Principios de Software</h3>
+
+  <p>
+    En Angular (y en TypeScript en general), aplicar principios sólidos de software y un uso consciente del <strong>tipado</strong>
+    mejora la calidad, mantenibilidad y escalabilidad de tus proyectos.
+  </p>
+
+  <h4>📌 Uso Consciente del Tipado de Variables en Angular</h4>
+  <p>
+    El tipado en TypeScript es una de sus mayores ventajas. Al declarar correctamente los tipos, puedes prevenir errores,
+    aprovechar el autocompletado en el editor y escribir código más limpio.
+  </p>
+
+  <ul>
+    <li><code>string</code>: Texto, por ejemplo <code>"Pragma"</code></li>
+    <li><code>number</code>: Números, por ejemplo <code>4</code></li>
+    <li><code>boolean</code>: Verdadero o Falso</li>
+    <li><code>any</code>: Cualquier tipo (evitar su uso en lo posible)</li>
+    <li><code>undefined</code>: Variable declarada pero sin valor</li>
+    <li><code>null</code>: Variable sin valor asignado</li>
+    <li><code>Array&lt;T&gt;</code>: Arreglo de elementos del tipo <code>T</code></li>
+  </ul>
+
+  <p>Por ejemplo, este código fallará por un mal tipado:</p>
+
+  <pre><code ngNonBindable>
+let edad: number = 25;
+edad = "veinticinco"; // Error: string no se puede asignar a number
+  </code></pre>
+
+  <p>En su lugar, podemos definir estructuras claras con interfaces:</p>
+
+  <pre><code ngNonBindable>
+interface Usuario &#123;
+  nombre: string;
+  edad: number;
+  activo: boolean;
+&#125;
+
+const usuario: Usuario = &#123;
+  nombre: "Ana",
+  edad: 30,
+  activo: true
+&#125;
+  </code></pre>
+
+  <h4>🧱 Principio de Responsabilidad Única (SRP)</h4>
+  <p>
+    Una clase o componente debe tener una única razón para cambiar. En Angular, esto significa que un componente debe enfocarse en una única tarea, como mostrar una lista, no procesar datos ni manejar lógica de negocio.
+  </p>
+
+  <h4>🔓 Principio de Abierto/Cerrado (OCP)</h4>
+  <p>
+    El código debe estar <strong>abierto a extensiones</strong> pero <strong>cerrado a modificaciones</strong>. En Angular,
+    esto se logra creando servicios y componentes reutilizables, y extendiendo lógica sin tocar lo que ya funciona.
+  </p>
+
+  <h4>🔁 Principio de Sustitución de Liskov (LSP)</h4>
+  <p>
+    Si una clase hija reemplaza a una clase padre, el comportamiento del programa no debe cambiar. Este principio fomenta
+    la herencia lógica y la compatibilidad entre clases.
+  </p>
+
+  <h4>📐 Principio de Segregación de Interfaces (ISP)</h4>
+  <p>
+    Es preferible tener varias <strong>interfaces pequeñas</strong> y especializadas en lugar de una interfaz grande
+    que obligue a implementar métodos innecesarios.
+  </p>
+
+  <pre><code ngNonBindable>
+interface Volador &#123;
+  volar(): void;
+&#125;
+
+interface Nadador &#123;
+  nadar(): void;
+&#125;
+
+class Pato implements Volador, Nadador &#123;
+  volar() &#123; console.log("vuela"); &#125;
+  nadar() &#123; console.log("nada"); &#125;
+&#125;
+  </code></pre>
+
+</div>

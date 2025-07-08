@@ -1,0 +1,79 @@
+<h4>🔹 ¿Qué son GET y POST?</h4>
+<p>
+    En aplicaciones web, los métodos <strong>GET</strong> y <strong>POST</strong> son los más usados para comunicarte
+    con un servidor. Se utilizan para <strong>intercambiar datos</strong> entre el cliente (tu navegador) y el servidor
+    (una API o backend).
+</p>
+
+<ul>
+    <li>
+        <strong>GET</strong>: Se usa para <u>obtener información</u>. Por ejemplo, puedes usarlo para consultar datos
+        desde una API y mostrarlos en tu aplicación.
+    </li>
+    <li>
+        <strong>POST</strong>: Se usa para <u>enviar información</u> al servidor. Un caso común es cuando envías un
+        formulario con datos de usuario.
+    </li>
+</ul>
+
+<h4>🔹 ¿Qué es una API?</h4>
+<p>
+    Una <strong>API</strong> (Interfaz de Programación de Aplicaciones) permite que dos sistemas diferentes se
+    comuniquen.
+    Funciona como un <em>puente</em> entre tu aplicación frontend y un servidor, permitiendo el intercambio de datos sin
+    necesidad de conocer cómo está construido el otro sistema.
+</p>
+
+<h4>🔧 Crear un Servicio para Consumir APIs</h4>
+<p>
+    Vamos a consumir una API pública llamada <code>huachitos.cl</code>, que nos entrega información sobre perritos 🐶
+    como su nombre, edad, personalidad e imagen.
+</p>
+
+<p>
+    Primero, creamos un servicio Angular dentro de la carpeta <code>services</code>. Puedes generarlo con el siguiente
+    comando:
+</p>
+
+<pre><code>ng generate service fake-store</code></pre>
+
+<p>Tu estructura del proyecto debería lucir así en este punto:</p>
+<img src="../../../../../assets/images/persistence-1.png" alt="Estructura del proyecto con el servicio generado">
+
+<p>
+    Según la documentación de la API, la URL que vamos a consumir es:
+    <br />
+    <code>https://huachitos.cl/api/animales/tipo/perro</code>
+</p>
+
+<p>
+    En el servicio que acabamos de crear, añadimos una función que será la encargada de obtener los datos desde esa URL:
+</p>
+<img src="../../../../../assets/images/persistence-2.png" alt="Código del método getDogs">
+
+<h4>📥 Llamar al Servicio desde el Componente</h4>
+<p>
+    Ahora, llamamos a ese servicio desde un componente, por ejemplo uno llamado <code>service-component</code>, que
+    simula una página de adopción de mascotas.
+</p>
+<img src="../../../../../assets/images/persistence-3.png" alt="Inyección del servicio en el componente">
+
+<p>
+    Como puedes ver, el servicio se inyecta en el constructor y se utiliza dentro del método <code>ngOnInit()</code>
+    para cargar los datos automáticamente al iniciar el componente.
+</p>
+
+<p>
+    Si inspeccionamos la respuesta de la API, veremos la estructura del JSON que recibimos:
+</p>
+<img src="../../../../../assets/images/persistence-4.png" alt="Estructura JSON devuelta por la API">
+
+<p>
+    Con esta estructura clara, ya podemos usar los datos para mostrarlos en pantalla.
+</p>
+<img src="../../../../../assets/images/persistence-5.png" alt="Uso de datos en plantilla HTML">
+
+<p>
+    El resultado final podría verse así:
+</p>
+<img src="../../../../../assets/images/persistence-6.png" alt="Resultado final de los datos renderizados">

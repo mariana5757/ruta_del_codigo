@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 15rem;
+}
+.icon{
+    width: 35px;
+    height: 35px;
+}
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.button{
+    background-color: #330072;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #DD52DD;
+    padding: 5px 10px;
+}
+.button:hover{
+    background-color: #DD52DD;
+    color: white;
+}
+h1{
+    font-size: 1.8rem;
+}
+p{
+    font-size:14px
+}
+.button:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
