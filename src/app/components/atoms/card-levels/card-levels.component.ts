@@ -1,8 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-card-levels',
-  imports: [],
+  imports: [CommonModule],
+  standalone: true,
   templateUrl: './card-levels.component.html',
   styleUrl: './card-levels.component.css'
 })
